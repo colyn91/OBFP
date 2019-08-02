@@ -35,18 +35,20 @@ Gas limit
 6) Invoke
 
 
-# 3. Related Test data and results
+# 3. Related Test Data
 
-Address
-user: 0xca35b7d915458ef540ade6068dfe2f44e8fa733c  (balance: 100 eth)
+## Address
 
-worker: 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c  (balance: 100 eth)
+User: 0xca35b7d915458ef540ade6068dfe2f44e8fa733c  (balance: 100 eth)
+
+Worker: 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c  (balance: 100 eth)
 
 The duration time is: 10 minutes
 
-When k = 60
+The value of k is set as 60
 
-Task:
+## Task
+
 f_des:  "f(x) = H(R^H(b^x))"
 h_s:  0xa71d052937ac1198871ccaa56e0a219f57240aecd196671520caa1778eb98abf
 P_des:  "E:/Test/OBPay/data.txt"
@@ -79,6 +81,8 @@ Commitment：
 
 scid: 
 0x0971b5d216af52c411c9016bbc63665b4e6f2542
+
+# Results
 
 Deploy
 transaction cost: 1566837 gas
