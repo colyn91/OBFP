@@ -1,4 +1,4 @@
-1. Environment
+# 1. Environment
 
 Remix:
 http://remix.ethereum.org
@@ -25,7 +25,7 @@ Featured Plugins:
 Gas limit
 3000000 
 
-2. Steps
+# 2. Steps
 
 1) Open: http://remix.ethereum.org
 2) File explorer: OBPay.sol and alt_bn128.sol
@@ -35,7 +35,7 @@ Gas limit
 6) Invoke
 
 
-3. Related Test data and results
+# 3. Related Test data and results
 
 Address
 user: 0xca35b7d915458ef540ade6068dfe2f44e8fa733c  (balance: 100 eth)
