@@ -89,48 +89,57 @@ scid:
 
 # Results
 
-Deploy
+### Deploy
 
-transaction cost: 1566837 gas
-execution cost: 1142365 gas
+1. transaction cost: 1566837 gas
 
-submitTask
+2. execution cost: 1142365 gas
 
-transaction cost: 2908606 gas
-execution cost: 2619878 gas
+### submitTask
+
+1. transaction cost: 2908606 gas
+
+2. execution cost: 2619878 gas
 
 
-getTask
+### getTask
 
-transaction cost: 64766 gas
-execution cost: 43494 gas
+1. transaction cost: 64766 gas
 
-submitCM
+2. execution cost: 43494 gas
 
-transaction cost: 1473619 gas
-execution cost: 1322235 gas
+### submitCM
 
-getCM
+1. transaction cost: 1473619 gas
 
-transaction cost: 42451 gas
-execution cost: 21179 gas
+2. execution cost: 1322235 gas
 
-payRequest
+### getCM
 
-transaction cost: 22154 gas
-execution cost: 882 gas
+1. transaction cost: 42451 gas
 
-submitProof
+2. execution cost: 21179 gas
 
-transaction cost: 194365 gas
-execution cost: 169829 gas
+### payRequest
 
-getProof
+1. transaction cost: 22154 gas
 
-transaction cost: 22040 gas
-execution cost: 768 gas
+2. execution cost: 882 gas
 
-submitCP
+### submitProof
 
-transaction cost: 15227 gas
-execution cost: 7803 gas
+1. transaction cost: 194365 gas
+
+2. execution cost: 169829 gas
+
+### getProof
+
+1. transaction cost: 22040 gas
+
+2. execution cost: 768 gas
+
+### submitCP
+
+1. transaction cost: 15227 gas
+
+2. execution cost: 7803 gas
