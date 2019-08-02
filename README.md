@@ -90,38 +90,47 @@ scid:
 # Results
 
 Deploy
+
 transaction cost: 1566837 gas
 execution cost: 1142365 gas
 
 submitTask
+
 transaction cost: 2908606 gas
 execution cost: 2619878 gas
 
 
 getTask
+
 transaction cost: 64766 gas
 execution cost: 43494 gas
 
 submitCM
+
 transaction cost: 1473619 gas
 execution cost: 1322235 gas
 
 getCM
+
 transaction cost: 42451 gas
 execution cost: 21179 gas
 
 payRequest
+
 transaction cost: 22154 gas
 execution cost: 882 gas
 
 submitProof
+
 transaction cost: 194365 gas
 execution cost: 169829 gas
 
 getProof
+
 transaction cost: 22040 gas
 execution cost: 768 gas
 
 submitCP
+
 transaction cost: 15227 gas
 execution cost: 7803 gas
