@@ -18,7 +18,7 @@ contract OBPay {
         uint256 index;
         uint256[k] T_val;
         uint256[k] P2_val;
-        uint256[k] h_val;
+        uint256[2] h_val;
         uint256[2] C_val;
         uint256 key_val;
         uint256 r_val;
@@ -123,7 +123,7 @@ contract OBPay {
 	}
 	
 	//function to submit the commitment
-	function submitCM(address user, uint256[k] h_val, uint256[2] C_val) public payable returns (bool){
+	function submitCM(address user, uint256[2] h_val, uint256[2] C_val) public payable returns (bool){
 	//** the function of submitCM **//
 		require(msg.value >= v_g);
 		uint256 l;
@@ -131,22 +131,18 @@ contract OBPay {
 		if(task[l].worker == 0)
 		{
 			task[l].worker = msg.sender;
-			for(i = 0; i < k; i++)
-			{
-				task[l].h_val[i] = h_val[i];
-			}
+			
 			for(i = 0; i <2; i++)
 			{
+			    task[l].h_val[i] = h_val[i];
 				task[l].C_val[i] = C_val[i];
 			}
 		}
 		else
 		{
 			require(msg.sender == task[l].worker);
-			for(i = 0; i < k; i++)
-			{
-				task[l].h_val[i] = h_val[i];
-			}
+			
+			task[l].h_val = h_val;
 			for(i = 0; i <2; i++)
 			{
 				task[l].C_val[i] = C_val[i];
@@ -157,7 +153,7 @@ contract OBPay {
 	}
 	
 	//function to get the commitment
-	function getCM(address user) public view returns (uint256[k] h_val, uint256[2] C_val){
+	function getCM(address user) public view returns (uint256[2] h_val, uint256[2] C_val){
 	     uint256 l;
 	     l = find(user);
 		 return(task[l].h_val, task[l].C_val);
@@ -220,15 +216,21 @@ contract OBPay {
 	}
 	
 	// function to submit claim proof
-	function submitCP(address user, uint256 c_val) public returns (bool){
+	function submitCP(address user, uint256 c_val, uint256[2] pi_c) public returns (bool){
 	    uint256 x_val;
 		uint256 l;
+		alt_bn128.G1Point memory P_pi_c;
+		alt_bn128.G1Point memory P_h_val;
+		alt_bn128.G1Point memory tmp;
 		l = find(user);
 	    if(msg.sender == task[l].user)
 	    {
-    	    for(i = 0; i < k; i ++)
-    	    {
-    	        if(task[l].h_val[i] == uint256(keccak256(c_val)))
+    	        P_pi_c.X = pi_c[0];
+    	        P_pi_c.Y = pi_c[1];
+    	        P_h_val.X = task[l].h_val[0];
+    	        P_h_val.Y = task[l].h_val[1];
+    	        tmp = alt_bn128.mul(P_pi_c, c_val);
+    	        if( tmp.X == P_h_val.X && tmp.Y == P_h_val.Y)
     	        {
     	           x_val = decrypt(c_val, task[l].key_val);
     	           for(j = 0; j < k; j++)
@@ -241,7 +243,6 @@ contract OBPay {
     	           msg.sender.transfer(v_g);
     	           return true;
     	        }
-    	    }
 	    }
 	    else if (msg.sender == task[l].worker)
 	    {
