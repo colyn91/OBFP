@@ -243,12 +243,15 @@ contract OBPay {
     	           msg.sender.transfer(v_g);
     	           return true;
     	        }
+    	        else
+    	            return false;
 	    }
 	    else if (msg.sender == task[l].worker)
 	    {
 	        if(now > start + 10 minutes)
 	        {
 	            msg.sender.transfer(v_g);
+	            return true;
 	        }
 	    }
 	}
