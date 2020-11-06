@@ -1,5 +1,9 @@
 ## 1. Environment
 
+# 1 Cloud storage testing tool
+COSBench, which is required to run the file of obfp-config.xml
+
+# 2 Smart contract deployment tool
 Remix:
 http://remix.ethereum.org
 
@@ -23,9 +27,6 @@ Featured Plugins:
 
 Gas limit:
 10000000 
-
-Cloud storage testing tool:
-CoSBench, which is required to run the file of obfp-config.xml
 
 ===================================================================================================================
 ## 2. Steps
