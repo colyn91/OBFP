@@ -2,7 +2,7 @@ pragma solidity ^0.4.19;
 
 import "./altbn_128.sol";
 
-contract OBPay {
+contract OBFP {
 
 	using alt_bn128 for *; 
 
