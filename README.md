@@ -1,7 +1,7 @@
 # 1. Environment
 
 ## (1) Cloud storage testing tool
-COSBench, which is required to run the file of obfp-config.xml
+COSBench (https://github.com/intel-cloud/cosbench), which is required to run the file of obfp-config.xml
 
 ## (2) Smart contract deployment tool
 Remix:
